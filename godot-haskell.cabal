@@ -1,11 +1,5 @@
 cabal-version: 2.0
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
---
--- see: https://github.com/sol/hpack
---
--- hash: 9eee1b834a7b311c2aaf343d7472f4478f3d5840413d415e779ebfd822966642
-
 name:           godot-haskell
 version:        3.1.0.0
 synopsis:       Haskell bindings for the Godot game engine API
@@ -19,38 +13,6 @@ copyright:      2018 David Kraeutmann
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-extra-source-files:
-    README.md
-    cbits/util.h
-    godot_headers/android/godot_android.h
-    godot_headers/arvr/godot_arvr.h
-    godot_headers/gdnative/aabb.h
-    godot_headers/gdnative/array.h
-    godot_headers/gdnative/basis.h
-    godot_headers/gdnative/color.h
-    godot_headers/gdnative/dictionary.h
-    godot_headers/gdnative/gdnative.h
-    godot_headers/gdnative/node_path.h
-    godot_headers/gdnative/plane.h
-    godot_headers/gdnative/pool_arrays.h
-    godot_headers/gdnative/quat.h
-    godot_headers/gdnative/rect2.h
-    godot_headers/gdnative/rid.h
-    godot_headers/gdnative/string.h
-    godot_headers/gdnative/string_name.h
-    godot_headers/gdnative/transform.h
-    godot_headers/gdnative/transform2d.h
-    godot_headers/gdnative/variant.h
-    godot_headers/gdnative/vector2.h
-    godot_headers/gdnative/vector3.h
-    godot_headers/gdnative_api_struct.gen.h
-    godot_headers/nativescript/godot_nativescript.h
-    godot_headers/net/godot_net.h
-    godot_headers/net/godot_webrtc.h
-    godot_headers/pluginscript/godot_pluginscript.h
-    godot_headers/videodecoder/godot_videodecoder.h
-    godot_headers/api.json
-    godot_headers/gdnative_api.json
 
 source-repository head
   type: git
@@ -697,11 +659,6 @@ library
       src
   default-extensions: FlexibleContexts FlexibleInstances ScopedTypeVariables TypeApplications StandaloneDeriving DerivingStrategies DefaultSignatures MultiParamTypeClasses FunctionalDependencies TypeFamilies TemplateHaskell TypeOperators TypeInType QuasiQuotes OverloadedStrings PatternSynonyms GeneralizedNewtypeDeriving
   ghc-options: -O0
-  include-dirs:
-      godot_headers
-      cbits
-  build-tools:
-      c2hs
   build-depends:
       aeson
     , base
@@ -710,70 +667,8 @@ library
     , colour
     , containers
     , extra
-    , generate
     , lens
     , linear
-    , mtl
-    , stm
-    , template-haskell
-    , text
-    , th-abstraction
-    , unordered-containers
-    , vector
-  default-language: Haskell2010
-
-library generate
-  exposed-modules:
-      Generate
-      Spec
-      Types
-      Types.Internal
-  other-modules:
-      Paths_godot_haskell
-  hs-source-dirs:
-      src-generate
-  default-extensions: FlexibleContexts FlexibleInstances ScopedTypeVariables TypeApplications StandaloneDeriving DerivingStrategies DefaultSignatures MultiParamTypeClasses FunctionalDependencies TypeFamilies TemplateHaskell TypeOperators TypeInType QuasiQuotes OverloadedStrings PatternSynonyms GeneralizedNewtypeDeriving
-  ghc-options: -O0
-  build-depends:
-      aeson
-    , ansi-wl-pprint
-    , base
-    , bytestring
-    , casing
-    , containers
-    , extra
-    , lens
-    , mtl
-    , parsec
-    , parsers
-    , stm
-    , template-haskell
-    , text
-    , th-abstraction
-    , unordered-containers
-    , vector
-  default-language: Haskell2010
-
-executable godot-haskell-project-generator
-  main-is: Main.hs
-  other-modules:
-      Paths_godot_haskell
-  hs-source-dirs:
-      project-generator
-  default-extensions: FlexibleContexts FlexibleInstances ScopedTypeVariables TypeApplications StandaloneDeriving DerivingStrategies DefaultSignatures MultiParamTypeClasses FunctionalDependencies TypeFamilies TemplateHaskell TypeOperators TypeInType QuasiQuotes OverloadedStrings PatternSynonyms GeneralizedNewtypeDeriving
-  ghc-options: -O0
-  build-depends:
-      aeson
-    , base
-    , bytestring
-    , casing
-    , containers
-    , directory
-    , extra
-    , filepath
-    , fsnotify
-    , interpolate
-    , lens
     , mtl
     , stm
     , template-haskell
